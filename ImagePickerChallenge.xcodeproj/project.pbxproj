@@ -11,6 +11,7 @@
 		E744FA6D272D6CB300661E52 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E744FA6C272D6CB300661E52 /* ContentView.swift */; };
 		E744FA6F272D6CB500661E52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E744FA6E272D6CB500661E52 /* Assets.xcassets */; };
 		E744FA72272D6CB500661E52 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E744FA71272D6CB500661E52 /* Preview Assets.xcassets */; };
+		E744FA79272D6E1100661E52 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E744FA78272D6E1100661E52 /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		E744FA6C272D6CB300661E52 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E744FA6E272D6CB500661E52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E744FA71272D6CB500661E52 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E744FA78272D6E1100661E52 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				E744FA6A272D6CB300661E52 /* ImagePickerChallengeApp.swift */,
 				E744FA6C272D6CB300661E52 /* ContentView.swift */,
+				E744FA78272D6E1100661E52 /* ImagePicker.swift */,
 				E744FA6E272D6CB500661E52 /* Assets.xcassets */,
 				E744FA70272D6CB500661E52 /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E744FA79272D6E1100661E52 /* ImagePicker.swift in Sources */,
 				E744FA6D272D6CB300661E52 /* ContentView.swift in Sources */,
 				E744FA6B272D6CB300661E52 /* ImagePickerChallengeApp.swift in Sources */,
 			);
