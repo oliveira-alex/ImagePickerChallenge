@@ -21,29 +21,37 @@ struct ContentView: View {
         NavigationView {
             List {
                 ForEach(images.sorted(), id: \.id) { image in
-                    // NavigationLink to DetailView
-                    HStack {
-                        Image(uiImage: image.image)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 80, height: 45)
-                        Text(image.name)
+                    NavigationLink(destination: DetailView(namedImage: image)) {
+                        HStack {
+                            Image(uiImage: image.image)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 80, height: 45)
+                            Text(image.name)
+                        }
                     }
                 }
+                .onDelete(perform: removeImages)
             }
             .sheet(isPresented: $showingImagePicker, onDismiss: showEnterNameSheet) {
                 ImagePicker(newImage: $newImage)
             }
             .toolbar {
-                let showPicker = { showingImagePicker = true }
-                Button(action: showPicker) {
-                    Image(systemName: "plus")
-                        // without the padding the button stops responding after first tap
-                        .padding()
+                ToolbarItem(placement: .navigationBarLeading) {
+                    EditButton()
+                }
+                
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    let showPicker = { showingImagePicker = true }
+                    Button(action: showPicker) {
+                        Image(systemName: "plus")
+                            // without the padding the button stops responding after first tap
+                            .padding()
+                    }
                 }
             }
             .sheet(isPresented: $showingEnterNameSheet, onDismiss: addImage) {
-                EnterNameView(newImageName: $newImageName)
+                EnterNameView(newImage: $newImage, newImageName: $newImageName)
             }
             .onAppear(perform: loadImages)
             .navigationTitle("Image List")
@@ -93,6 +101,11 @@ struct ContentView: View {
         } catch {
             
         }
+    }
+    
+    func removeImages(at offsets: IndexSet) {
+        images.remove(atOffsets: offsets)
+        saveImages()
     }
 }
 

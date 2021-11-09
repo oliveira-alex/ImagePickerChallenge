@@ -9,10 +9,18 @@ import SwiftUI
 
 struct EnterNameView: View {
     @Environment(\.presentationMode) var presentationMode
+    @Binding var newImage: UIImage?
     @Binding var newImageName: String
-    
+
     var body: some View {
         VStack(alignment: .center, spacing: 30) {
+            if newImage != nil {
+                Image(uiImage: newImage!)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 320, height: 180)
+            }
+            
             TextField("New Image Name", text: $newImageName)
                 .multilineTextAlignment(.center)
                 .padding()
