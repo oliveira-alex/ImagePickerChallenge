@@ -12,19 +12,23 @@ struct DetailView: View {
     var namedImage: NamedImage
 
     var body: some View {
-        VStack(alignment: .center, spacing: 30) {
+        VStack(spacing: 20) {
             Image(uiImage: namedImage.image)
                 .resizable()
                 .scaledToFit()
 //                .frame(width: 320, height: 180)
             
-            Text(namedImage.name)
-                .padding()
-                
+//                Text(namedImage.name)
+//                    .font(.headline)
+//
+            Spacer()
+            
             Button("OK") {
                 presentationMode.wrappedValue.dismiss()
             }
+            .padding()
         }
+        .navigationTitle(Text(namedImage.name))
     }
 }
 

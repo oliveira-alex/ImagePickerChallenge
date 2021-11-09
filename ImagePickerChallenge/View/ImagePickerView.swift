@@ -1,5 +1,5 @@
 //
-//  ImagePicker.swift
+//  ImagePickerView.swift
 //  ImagePickerChallenge
 //
 //  Created by Alex Oliveira on 30/10/2021.
@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct ImagePicker: UIViewControllerRepresentable {
+struct ImagePickerView: UIViewControllerRepresentable {
     class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-        let parent: ImagePicker
+        let parent: ImagePickerView
         
-        init(parent: ImagePicker) {
+        init(parent: ImagePickerView) {
             self.parent = parent
         }
         
@@ -44,7 +44,7 @@ struct ImagePicker: UIViewControllerRepresentable {
 //    typealias UIViewControllerType = UIImagePickerController
 }
 
-//struct ImagePicker_Previews: PreviewProvider {
+//struct ImagePickerView_Previews: PreviewProvider {
 //    static var previews: some View {
 //        ImagePicker()
 //    }

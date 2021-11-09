@@ -34,7 +34,7 @@ struct ContentView: View {
                 .onDelete(perform: removeImages)
             }
             .sheet(isPresented: $showingImagePicker, onDismiss: showEnterNameSheet) {
-                ImagePicker(newImage: $newImage)
+                ImagePickerView(newImage: $newImage)
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
