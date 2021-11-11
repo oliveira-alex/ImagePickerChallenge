@@ -21,7 +21,7 @@ struct EnterNameView: View {
                     .frame(width: 320, height: 180)
             }
             
-            TextField("New Image Name", text: $newImageName)
+            TextField("Tap here to name the image", text: $newImageName)
                 .multilineTextAlignment(.center)
                 .padding()
                 

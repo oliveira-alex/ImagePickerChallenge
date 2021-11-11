@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E728D02D273A7DCF00C6A48D /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E728D02C273A7DCF00C6A48D /* MapView.swift */; };
+		E728D02F273A83CB00C6A48D /* LocationFetcherClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E728D02E273A83CB00C6A48D /* LocationFetcherClass.swift */; };
 		E7372DDF2739DFAC0059ADDF /* EnterNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7372DDE2739DFAB0059ADDF /* EnterNameView.swift */; };
 		E7372DE12739F0A10059ADDF /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7372DE02739F0A10059ADDF /* DetailView.swift */; };
 		E744FA6B272D6CB300661E52 /* ImagePickerChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E744FA6A272D6CB300661E52 /* ImagePickerChallengeApp.swift */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E728D02C273A7DCF00C6A48D /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		E728D02E273A83CB00C6A48D /* LocationFetcherClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetcherClass.swift; sourceTree = "<group>"; };
 		E7372DDE2739DFAB0059ADDF /* EnterNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterNameView.swift; sourceTree = "<group>"; };
 		E7372DE02739F0A10059ADDF /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		E744FA67272D6CB300661E52 /* ImagePickerChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImagePickerChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,6 +47,7 @@
 		E728D02A273A79E200C6A48D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E728D02E273A83CB00C6A48D /* LocationFetcherClass.swift */,
 				E7B9F912273995D600D59F10 /* NamedImageStruct.swift */,
 			);
 			path = Model;
@@ -54,6 +59,7 @@
 				E744FA78272D6E1100661E52 /* ImagePickerView.swift */,
 				E7372DDE2739DFAB0059ADDF /* EnterNameView.swift */,
 				E7372DE02739F0A10059ADDF /* DetailView.swift */,
+				E728D02C273A7DCF00C6A48D /* MapView.swift */,
 				E744FA6C272D6CB300661E52 /* ContentView.swift */,
 			);
 			path = View;
@@ -165,10 +171,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E728D02D273A7DCF00C6A48D /* MapView.swift in Sources */,
 				E744FA79272D6E1100661E52 /* ImagePickerView.swift in Sources */,
 				E7372DE12739F0A10059ADDF /* DetailView.swift in Sources */,
 				E744FA6D272D6CB300661E52 /* ContentView.swift in Sources */,
 				E7372DDF2739DFAC0059ADDF /* EnterNameView.swift in Sources */,
+				E728D02F273A83CB00C6A48D /* LocationFetcherClass.swift in Sources */,
 				E7B9F913273995D600D59F10 /* NamedImageStruct.swift in Sources */,
 				E744FA6B272D6CB300661E52 /* ImagePickerChallengeApp.swift in Sources */,
 			);
@@ -304,6 +312,7 @@
 				DEVELOPMENT_TEAM = 8373G5V95D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Required for marking where the image was imported";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -334,6 +343,7 @@
 				DEVELOPMENT_TEAM = 8373G5V95D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Required for marking where the image was imported";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

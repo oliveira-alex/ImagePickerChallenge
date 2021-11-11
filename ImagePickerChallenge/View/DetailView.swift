@@ -16,11 +16,11 @@ struct DetailView: View {
             Image(uiImage: namedImage.image)
                 .resizable()
                 .scaledToFit()
-//                .frame(width: 320, height: 180)
+                .padding()
             
-//                Text(namedImage.name)
-//                    .font(.headline)
-//
+            MapView(locationCoordinate: namedImage.locationCoordinate)
+                .padding()
+
             Spacer()
             
             Button("OK") {

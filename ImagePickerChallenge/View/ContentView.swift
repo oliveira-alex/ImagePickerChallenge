@@ -5,6 +5,7 @@
 //  Created by Alex Oliveira on 30/10/2021.
 //
 
+import CoreLocation
 import SwiftUI
 
 struct ContentView: View {
@@ -13,6 +14,8 @@ struct ContentView: View {
     @State private var showingImagePicker = false
     @State private var newImage: UIImage?
     @State private var newImageName = ""
+    @State private var newImageLocation = CLLocationCoordinate2D(latitude: 0, longitude: 0)
+    let locationFetcher = LocationFetcher()
     
     @State private var showingEnterNameSheet = false
 
@@ -20,7 +23,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(images.sorted(), id: \.id) { image in
+                ForEach(images, id: \.id) { image in
                     NavigationLink(destination: DetailView(namedImage: image)) {
                         HStack {
                             Image(uiImage: image.image)
@@ -42,8 +45,12 @@ struct ContentView: View {
                 }
                 
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    let showPicker = { showingImagePicker = true }
-                    Button(action: showPicker) {
+                    let showPickerButtonAction = {
+                        showingImagePicker = true
+                        
+                        self.locationFetcher.start()
+                    }
+                    Button(action: showPickerButtonAction) {
                         Image(systemName: "plus")
                             // without the padding the button stops responding after first tap
                             .padding()
@@ -60,17 +67,24 @@ struct ContentView: View {
     
     func showEnterNameSheet() {
         guard newImage != nil else { return }
-        
+
         showingEnterNameSheet = true
+        
+        if let location = locationFetcher.lastKnownLocation {
+            newImageLocation = location
+        }
     }
     
     func addImage() {
         if newImageName.isEmpty {
             newImageName = "Unnamed Image"
         }
-        
-        let newNamedImage = NamedImage(name: newImageName, image: newImage!)
+
+        let newNamedImage = NamedImage(name: newImageName.trimmingCharacters(in: .whitespacesAndNewlines),
+                                       image: newImage!,
+                                       locationCoordinate: newImageLocation)
         images.append(newNamedImage)
+        images.sort()
         saveImages()
         
         newImageName = ""
